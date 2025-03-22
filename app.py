@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 import streamlit as st
 import tempfile
@@ -10,7 +5,8 @@ from search_engine import audio_to_text, search_subtitles
 import os
 from pydub import AudioSegment
 
-st.title("🎬 Video Subtitle Search Engine")
+st.title("🎥 SubSearch AI")
+st.subheader("Subtitle Search Engine Powered by NLP & ML")
 
 uploaded_file = st.file_uploader("Upload a 4-5 min audio clip (MP3 or WAV)", type=["mp3", "wav"])
 
@@ -37,4 +33,3 @@ if uploaded_file:
     for res in results:
         st.write(f"**{res['text']}** (Subtitle ID: {res['subtitle_id']})")
         st.markdown(f"[View Full Subtitle](https://www.opensubtitles.org/en/subtitles/{res['subtitle_id']})", unsafe_allow_html=True)
-
