@@ -3,6 +3,7 @@ import streamlit as st
 import tempfile
 from search_engine import audio_to_text, search_subtitles
 import os
+import chromadb
 from pydub import AudioSegment
 
 st.title("🎥 SubSearch AI")
